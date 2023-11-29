@@ -40,7 +40,7 @@ public class UserService {
 	public void delete(Long id) {
 		findById(id);
 		try {
-			
+			this.userRepository.deleteById(id);
 		}catch(Exception e) {
 			throw new RuntimeException("Não é possível excluir pois há entidades relacionadas!");
 		}
